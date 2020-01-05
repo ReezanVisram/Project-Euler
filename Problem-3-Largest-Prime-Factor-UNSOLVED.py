@@ -20,6 +20,7 @@ def SieveOfErathostenes(n):
 
     for p in range(n + 1):
         if prime[p]:
+            print(p)
             if (targetNumber % p == 0):
                 if (p > currHighestFactor):
                     currHighestFactor = p

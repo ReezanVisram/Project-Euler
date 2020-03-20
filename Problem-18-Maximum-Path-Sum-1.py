@@ -16,23 +16,14 @@ triangle = [
     [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23],
 ]
 
+sumList = []
 
-listHighest = []
-currIndex = 0
-prevIndex = 0
+for i in range(len(triangle) -2, -1, -1):
+        for j in range(len(triangle[i])):
+            triangle[i][j] += max(triangle[i + 1][j], triangle[i + 1][j + 1])
+            
+print(triangle[0][0])
 
-for i in triangle:
-    foundMax = False
-    while not foundMax:
-        currMax = max(i)
-        currIndex = i.index(currMax)
 
-        if (currIndex == prevIndex) or (currIndex - 1 == prevIndex):
-            listHighest.append(currMax)
-            prevIndex = currIndex
-            foundMax = True
 
-        else:
-            i[currIndex] = 0
 
-print(listHighest)
